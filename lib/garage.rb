@@ -16,5 +16,8 @@ class Garage
     end
   end
 
-  
+  def release_bike
+    fix_bikes
+    @bikes_in_storage.pop
+  end
 end

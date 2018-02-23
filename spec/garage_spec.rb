@@ -23,15 +23,13 @@ describe Garage do
     end
   end
 
-  # describe '#release_bike' do
-  #   it 'releases a working bike into the van' do
-  #     dummy_bike = double(:working => false)
-  #     subject.receive_broken_bike(dummy_bike)
-  #
-  #     subject.fix(dummy_bike)
-  #
-  #     expect()
-  #   end
-  #end
+  describe '#release_bike' do
+    it 'releases a working bike into the van' do
+      bike = Bike.new
+      bike.working = false
+      subject.receive_broken_bike(bike)
+      expect(subject.release_bike.working).to eq true
+    end
+  end
 
 end
