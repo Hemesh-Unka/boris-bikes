@@ -7,7 +7,9 @@ describe Garage do
 
   describe '#recieve_broken_bike' do
     it 'recieves a broken bike from a van' do
-
+      dummy_bike = double(:working => false)
+      subject.recieve_broken_bike(dummy_bike)
+      expect(subject.bikes_in_storage[0].working).to eq false
     end
   end
 

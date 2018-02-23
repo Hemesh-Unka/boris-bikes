@@ -1,7 +1,6 @@
 class Van
   attr_reader :bikes_in_storage
 
-
   def initialize
     @bikes_in_storage = []
   end
@@ -30,8 +29,7 @@ class Van
     end
   end
 
-  def deliver_broken_bike
-
+  def deliver_broken_bike(garage)
+    garage.recieve_broken_bike(select_broken_bike)
   end
-
 end
