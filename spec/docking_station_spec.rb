@@ -7,9 +7,9 @@ describe DockingStation do
   end
 
   it ':release_bike returns a new bike' do
-    dummy_bike = double()
+    dummy_bike = double(:working => true)
     subject.dock_bike(dummy_bike)
-    expect(subject.release_bike).to be_instance_of(Bike)
+    expect(subject.release_bike).to eq(dummy_bike)
   end
 
   it ':release_bike does not return a bike if no bikes are present' do
@@ -24,7 +24,7 @@ describe DockingStation do
 
   it ':dock_bike adds a bike' do
     dummy_bike = double()
-    expect(subject.dock_bike(dummy_bike)).to be_instance_of(Bike)
+    expect(subject.dock_bike(dummy_bike)).to eq(dummy_bike)
   end
 
   it ':capacity to equal 21' do
@@ -33,8 +33,7 @@ describe DockingStation do
   end
 
   it 'should not release bike if not working' do
-    dummy_bike = double()
-    bike.working = false
+    dummy_bike = double(:working => false)
     subject.dock_bike(dummy_bike)
     expect { subject.release_bike }.to raise_error(RuntimeError)
   end
