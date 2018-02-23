@@ -39,4 +39,11 @@ describe DockingStation do
     subject.dock_bike(dummy_bike)
     expect { subject.release_bike }.to raise_error(RuntimeError)
   end
+
+  it 'should release bike a broken bike if asked' do
+    dummy_bike = double(:working => false)
+    subject.dock_bike(dummy_bike)
+    expect(subject.release_broken_bike.working).to eq(false)
+  end
+
 end
