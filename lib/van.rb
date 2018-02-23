@@ -30,6 +30,6 @@ class Van
   end
 
   def deliver_broken_bike(garage)
-    garage.recieve_broken_bike(select_broken_bike)
+    garage.receive_broken_bike(select_broken_bike)
   end
 end
