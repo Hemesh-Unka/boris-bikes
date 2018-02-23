@@ -43,6 +43,7 @@ describe Van do
       subject.deliver_working_bike(docking_station)
 
       expect(docking_station.bikes[0].working).to eq true
+      expect(subject.bikes_in_storage.empty?).to eq true
     end
   end
 
@@ -65,6 +66,7 @@ describe Van do
 
       subject.deliver_broken_bike(garage)
       expect(garage.bikes_in_storage[0].working).to eq false
+      expect(subject.bikes_in_storage.empty?).to eq true
     end
   end
 

@@ -14,8 +14,8 @@ class Van
   end
 
   def select_working_bike
-    @bikes_in_storage.each do |bike|
-      return bike if bike.working
+    @bikes_in_storage.each_with_index do |bike, index|
+      return @bikes_in_storage.delete_at(index) if bike.working
     end
   end
 
@@ -24,8 +24,8 @@ class Van
   end
 
   def select_broken_bike
-    @bikes_in_storage.each do |bike|
-      return bike unless bike.working
+    @bikes_in_storage.each_with_index do |bike, index|
+      return @bikes_in_storage.delete_at(index) unless bike.working
     end
   end
 
