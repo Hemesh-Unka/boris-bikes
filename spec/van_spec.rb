@@ -34,6 +34,15 @@ describe Van do
 
   describe '#deliver_working_bike' do
     it 'delivers a working bike to a docking station' do
+      dummy_bike = double(:working => true)
+      docking_station = DockingStation.new
+
+      dummy_garage = double(:release_bike => dummy_bike)
+      subject.recieve_working_bike(dummy_garage)
+
+      subject.deliver_working_bike(docking_station)
+
+      expect(docking_station.bikes[0].working).to eq true
     end
   end
 

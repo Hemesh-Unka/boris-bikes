@@ -21,7 +21,7 @@ class Van
   end
 
   def deliver_working_bike(station)
-
+    station.dock_bike(select_working_bike)
   end
 
   def deliver_broken_bike
