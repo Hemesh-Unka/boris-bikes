@@ -16,7 +16,10 @@ describe Van do
 
   describe '#recieve_broken_bike' do
     it 'takes a broken bike from a docking station' do
-
+      dummy_bike = double(:working => false)
+      dummy_docking_station = double(:release_broken_bike => dummy_bike)
+      subject.recieve_broken_bike(dummy_docking_station)
+      expect(subject.bikes_in_storage[0].working).to eq false
     end
   end
 
