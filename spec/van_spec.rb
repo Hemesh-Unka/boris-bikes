@@ -23,9 +23,17 @@ describe Van do
     end
   end
 
+  describe '#select_working_bike' do
+    it 'selects a working bike from its inventory' do
+      dummy_bike = double(:working => true)
+      dummy_garage = double(:release_bike => dummy_bike)
+      subject.recieve_working_bike(dummy_garage)
+      expect(subject.select_working_bike.working).to eq true
+    end
+  end
+
   describe '#deliver_working_bike' do
     it 'delivers a working bike to a docking station' do
-
     end
   end
 

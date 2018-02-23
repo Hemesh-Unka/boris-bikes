@@ -14,7 +14,13 @@ class Van
     @bikes_in_storage.push(station.release_broken_bike)
   end
 
-  def deliver_working_bike
+  def select_working_bike
+    @bikes_in_storage.each do |bike|
+      return bike if bike.working
+    end
+  end
+
+  def deliver_working_bike(station)
 
   end
 
