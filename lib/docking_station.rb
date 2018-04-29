@@ -12,7 +12,9 @@ class DockingStation
   end
 
   def release_bike
+    # in IRB, when more than 10 bikes, it removes all the bikes
     fail 'No bikes available' if empty?
+    puts return_broken_bikes[0]
     @bikes.delete(return_working_bikes[0])
   end
 
@@ -48,5 +50,4 @@ class DockingStation
   def return_broken_bikes
     @bikes.select { |bike| bike.working == false }
   end
-
 end
