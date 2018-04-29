@@ -82,3 +82,27 @@ System to have an easy to read interface
 |  Objects | Messages |
 | --- | --- |
 | Docking_Station | display_instructions
+
+```
+As a maintainer of the system,
+So that I can manage broken bikes and not disappoint users,
+I'd like vans to take broken bikes from docking stations and deliver them to garages to be fixed.
+```
+
+|  Objects | Messages |
+| --- | --- |
+| Docking_Station | broken_bike
+| van | pickup_broken_bike
+| garage | receive_broken_bike
+
+```
+As a maintainer of the system,
+So that I can manage broken bikes and not disappoint users,
+I'd like vans to collect working bikes from garages and distribute them to docking stations.
+```
+
+|  Objects | Messages |
+| --- | --- |
+| Docking_Station | working_bike
+| van | pickup_working_bike
+| Docking_Station | receive_working_bike
